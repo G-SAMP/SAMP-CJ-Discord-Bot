@@ -21,4 +21,4 @@ from samp_client.client import SampClient
 Pull requests are welcome. All type of changes, please open an issue first to discuss what you would like to change.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/DeViL252/SAMP-Big-Smoke-Discord-Bot/blob/add-license-1/LICENSE)
