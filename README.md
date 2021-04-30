@@ -20,5 +20,6 @@ from samp_client.client import SampClient
 ## Contributing
 Pull requests are welcome. All type of changes, please open an issue first to discuss what you would like to change.
 
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
