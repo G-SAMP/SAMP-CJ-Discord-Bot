@@ -21,7 +21,7 @@ async def ip_error(ctx, error):
 
 
 @bot.command() #SERVER INFO   ---   $players [ip] [port]
-async def players(self,ctx,ADD,NUM):
+async def players(ctx,ADD,NUM):
     with SampClient(address=ADD, port=NUM) as client:
         info = client.get_server_info()
         players = [client.name for client in client.get_server_clients_detailed()]
@@ -32,11 +32,26 @@ async def players(self,ctx,ADD,NUM):
         s = s.join(res2)
         await ctx.send(f'```Server: {info.hostname}\nPlayers: {info.players}/{info.max_players}\nIP: {ADD}\nGame Mode: {info.gamemode}\nLanguage: {info.language}```')
         await ctx.send(f'```--Player Name-- | --Score-- | --Ping--\n{s}```\n**Total Online: {info.players}**')
+        await ctx.send(f'```{players}```')
 
 @players.error
-async def players_error(self,ctx, error):
+async def players_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send('Usage: $players [ip] [port]')
+
+
+#RCON COMMAND
+@bot.command() # ----- $rcon [ip] [port] [rcon_password] [rcon_cmd]
+async def rcon(ctx,ADD,NUM,PASS,*cmd):
+    with SampClient(address=ADD, port=NUM, rcon_password=PASS) as client:
+        conlist = '\n'.join(client.send_rcon_command(*cmd))
+        await ctx.send(f'```{conlist}```')
+
+@rcon.error
+async def rcon_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send('Usage: $rcon [ip] [port] [rcon_password] [rcon_cmd]\n```For Ex:- $rcon 127.0.0.1 7777 nothing cmdlist```')
+
 
 with open("./config.json", 'r') as configjsonFile:
     configData = json.load(configjsonFile)
