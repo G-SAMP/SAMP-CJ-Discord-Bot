@@ -32,7 +32,6 @@ async def players(ctx,ADD,NUM):
         s = s.join(res2)
         await ctx.send(f'```Server: {info.hostname}\nPlayers: {info.players}/{info.max_players}\nIP: {ADD}\nGame Mode: {info.gamemode}\nLanguage: {info.language}```')
         await ctx.send(f'```--Player Name-- | --Score-- | --Ping--\n{s}```\n**Total Online: {info.players}**')
-        await ctx.send(f'```{players}```')
 
 @players.error
 async def players_error(ctx, error):
