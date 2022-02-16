@@ -1,7 +1,7 @@
-# What is Big Smoke?
+# What is CJ Discord bot?
 <img alt="PyPI - Wheel" src="https://img.shields.io/pypi/wheel/samp-client?label=samp-client&logo=python">
 
-Big Smoke is a discord bot just like [CJ Bot](https://cjbot.team/) which display information about SA:MP Servers.
+CJ Discord bot is a discord bot just like [CJ Bot](https://cjbot.team/) which display information about SA:MP Servers.
 
 ## Requirement
 
