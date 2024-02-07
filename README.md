@@ -1,3 +1,5 @@
+## Note: [`samp-client`](https://pypi.org/project/samp-client/) is outdated and no longer work with SAMP or i don't recommend you to use it. Please try another packages like [`samp-query`](https://pypi.org/project/samp-query/) or you can write your own code to querying servers.
+
 # What is CJ Discord bot?
 <img alt="PyPI - Wheel" src="https://img.shields.io/pypi/wheel/samp-client?label=samp-client&logo=python">
 
